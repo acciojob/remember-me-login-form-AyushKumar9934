@@ -11,11 +11,7 @@ function check(e){
   let event1 = document.getElementById("checkbox").checked;
 
   if(localStorage.getItem("username") == username.value && localStorage.getItem("password") == password.value){
-    let but = document.createElement("button");
-    but.id = "existing";
-    but.onclick = () => {show(username)};
-    but.textContent = "Login as existing user.";
-    document.getElementById("form").appendChild(but);
+   document.getElementById('existing').style.display="inline-block";
   }
   else {
     if(event1) {
@@ -31,3 +27,4 @@ function check(e){
 }
 
 document.getElementById("submit").addEventListener('click', check);
+document.getElementById("existing").addEventListener('click',()=>alert(`Logged in as ${localStorage.getItem("username")}`))
